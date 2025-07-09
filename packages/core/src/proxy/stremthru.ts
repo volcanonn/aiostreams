@@ -50,6 +50,7 @@ export class StremThruProxy extends BaseProxy {
         for (const [key, value] of Object.entries(stream.headers.request)) {
           req_headers += `${key}: ${value}\n`;
         }
+        req_headers += `Accept-Encoding: identity\n`;
       }
       data.append(`req_headers[${i}]`, req_headers);
       if (stream.filename) {
